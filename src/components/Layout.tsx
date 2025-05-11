@@ -1,4 +1,3 @@
-
 import { useState, useEffect } from "react";
 import { Link, Outlet, useLocation } from "react-router-dom";
 import { Leaf, Menu, X } from "lucide-react";
@@ -11,6 +10,7 @@ const Layout = () => {
   const { toast } = useToast();
   const location = useLocation();
 
+  // Handle scroll effect for header
   useEffect(() => {
     const handleScroll = () => {
       setIsScrolled(window.scrollY > 10);
@@ -20,9 +20,22 @@ const Layout = () => {
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
+  // Close mobile menu when location changes
   useEffect(() => {
     setMobileMenuOpen(false);
   }, [location]);
+
+  // Add body scroll lock when mobile menu is open
+  useEffect(() => {
+    if (mobileMenuOpen) {
+      document.body.style.overflow = 'hidden';
+    } else {
+      document.body.style.overflow = '';
+    }
+    return () => {
+      document.body.style.overflow = '';
+    };
+  }, [mobileMenuOpen]);
 
   const navItems = [
     { name: "Home", path: "/" },
@@ -56,7 +69,7 @@ const Layout = () => {
           <div className="flex items-center justify-between h-16 md:h-20">
             <Link
               to="/"
-              className="flex items-center gap-2 text-primary font-bold text-xl"
+              className="flex items-center gap-2 text-primary font-bold text-xl z-10"
             >
               <Leaf className="h-6 w-6" />
               <span className="green-gradient-text">GreenRoutine</span>
@@ -91,8 +104,9 @@ const Layout = () => {
             <Button
               variant="ghost"
               size="icon"
-              className="md:hidden"
+              className="md:hidden z-10"
               onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
+              aria-label={mobileMenuOpen ? "Close menu" : "Open menu"}
             >
               {mobileMenuOpen ? (
                 <X className="h-6 w-6" />
@@ -103,30 +117,36 @@ const Layout = () => {
           </div>
         </div>
 
-        {/* Mobile navigation */}
+        {/* Mobile navigation - Full screen overlay for better mobile experience */}
         {mobileMenuOpen && (
-          <div className="md:hidden bg-background border-t">
-            <div className="container mx-auto px-4 pt-2 pb-4 space-y-1">
+          <div className="md:hidden fixed inset-0 bg-background z-40 flex flex-col overflow-y-auto">
+            <div className="container mx-auto px-4 pt-20 pb-4 space-y-2">
               {navItems.map((item) => (
                 <Link
                   key={item.path}
                   to={item.path}
-                  className={`block px-3 py-2 rounded-md text-base font-medium ${
+                  className={`block px-4 py-3 rounded-md text-base font-medium ${
                     location.pathname === item.path
                       ? "bg-primary/10 text-primary"
                       : "text-foreground/80 hover:bg-primary/10 hover:text-primary"
                   }`}
+                  onClick={() => setMobileMenuOpen(false)}
                 >
                   {item.name}
                 </Link>
               ))}
-              <Button
-                onClick={handleLogin}
-                variant="default"
-                className="w-full mt-4"
-              >
-                Login
-              </Button>
+              <div className="pt-4">
+                <Button
+                  onClick={() => {
+                    handleLogin();
+                    setMobileMenuOpen(false);
+                  }}
+                  variant="default"
+                  className="w-full"
+                >
+                  Login
+                </Button>
+              </div>
             </div>
           </div>
         )}
@@ -148,41 +168,86 @@ const Layout = () => {
                 Making sustainability a daily routine, one green habit at a time.
               </p>
             </div>
+
             <div>
-              <h3 className="text-lg font-semibold mb-4">Quick Links</h3>
+              <h3 className="font-bold text-lg mb-4">Quick Links</h3>
               <ul className="space-y-2">
-                {navItems.slice(0, 6).map((item) => (
-                  <li key={item.path}>
-                    <Link
-                      to={item.path}
-                      className="text-green-100 hover:text-white hover:underline transition-colors"
-                    >
-                      {item.name}
-                    </Link>
-                  </li>
-                ))}
+                <li>
+                  <Link
+                    to="/"
+                    className="text-green-100 hover:text-white transition-colors"
+                  >
+                    Home
+                  </Link>
+                </li>
+                <li>
+                  <Link
+                    to="/challenges"
+                    className="text-green-100 hover:text-white transition-colors"
+                  >
+                    Challenges
+                  </Link>
+                </li>
+                <li>
+                  <Link
+                    to="/calculator"
+                    className="text-green-100 hover:text-white transition-colors"
+                  >
+                    Calculator
+                  </Link>
+                </li>
+                <li>
+                  <Link
+                    to="/leaderboard"
+                    className="text-green-100 hover:text-white transition-colors"
+                  >
+                    Leaderboard
+                  </Link>
+                </li>
               </ul>
             </div>
+
             <div>
-              <h3 className="text-lg font-semibold mb-4">Connect With Us</h3>
-              <p className="text-green-100 mb-4">
-                Join our community to make a greener tomorrow.
-              </p>
-              <div className="flex space-x-4">
-                <a href="#" className="text-white hover:text-green-200">
-                  Twitter
-                </a>
-                <a href="#" className="text-white hover:text-green-200">
-                  Instagram
-                </a>
-                <a href="#" className="text-white hover:text-green-200">
-                  Facebook
-                </a>
-              </div>
+              <h3 className="font-bold text-lg mb-4">About Us</h3>
+              <ul className="space-y-2">
+                <li>
+                  <Link
+                    to="/story"
+                    className="text-green-100 hover:text-white transition-colors"
+                  >
+                    Our Story
+                  </Link>
+                </li>
+                <li>
+                  <Link
+                    to="/founders"
+                    className="text-green-100 hover:text-white transition-colors"
+                  >
+                    Team
+                  </Link>
+                </li>
+                <li>
+                  <Link
+                    to="/reviews"
+                    className="text-green-100 hover:text-white transition-colors"
+                  >
+                    Reviews
+                  </Link>
+                </li>
+                <li>
+                  <Link
+                    to="/faq"
+                    className="text-green-100 hover:text-white transition-colors"
+                  >
+                    FAQ
+                  </Link>
+                </li>
+              </ul>
             </div>
           </div>
-          <div className="border-t border-green-700 mt-8 pt-8 text-center text-green-200">
-            <p>&copy; {new Date().getFullYear()} GreenRoutine. All rights reserved.</p>
+
+          <div className="border-t border-green-700 mt-8 pt-8 text-center text-green-200 text-sm">
+            <p>© {new Date().getFullYear()} GreenRoutine. All rights reserved.</p>
           </div>
         </div>
       </footer>
