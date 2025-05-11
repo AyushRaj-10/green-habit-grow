@@ -1,6 +1,7 @@
 
 import { motion } from "framer-motion";
 import ImageWithFallback from "@/components/ImageWithFallback";
+import GreenGrowthAnimation from "@/components/GreenGrowthAnimation";
 
 const timelineEvents = [
   {
@@ -78,8 +79,8 @@ const impactStats = [
 const quotes = [
   { text: "Small changes in daily habits create massive impacts over time. GreenRoutine has helped thousands discover this simple truth.", author: "Ayush Raj, Co-founder & Full Stack Developer" },
   { text: "The most sustainable action is the one you actually do, day after day. Our goal is to make those actions easy, rewarding, and part of your routine.", author: "Arpita Singh, Co-founder & Head of Product" },
-  { text: "Our partnership with EcoWater has allowed us to directly impact water conservation efforts while providing tangible benefits to our users.", author: "Maya Patel, Partnerships Director" },
-  { text: "When we make sustainability personal and measurable, we create both motivation and accountability. That's the power of GreenRoutine.", author: "Dr. James Chen, Environmental Advisor" }
+  { text: "We designed GreenRoutine to be intuitive and engaging. When sustainability becomes a delightful experience, it naturally becomes part of your lifestyle.", author: "Astuti Singh, Co-founder & UX Designer" },
+  { text: "Our community is the heart of GreenRoutine. Together, we're proving that collective small actions can create significant environmental impacts.", author: "Arti Pikhan, Co-founder & Head of Community" }
 ];
 
 const Story = () => {
@@ -138,6 +139,24 @@ const Story = () => {
                   <p className="text-lg">
                     Through our partnership with EcoWater, we've launched the Clean Water Initiative, helping communities gain access to clean water while promoting water conservation habits. For every 1,000 water-saving challenges completed by our users, we fund a water filtration system for communities in need.
                   </p>
+                </div>
+              </div>
+            </div>
+
+            <div className="mt-12">
+              <h3 className="text-xl font-semibold mb-4">Our EcoWater Partnership</h3>
+              <div className="flex flex-col md:flex-row gap-6 items-center">
+                <div className="md:w-1/2 order-2 md:order-1">
+                  <p className="text-lg">
+                    EcoWater has been an incredible partner in our sustainability journey. Together, we've developed water-saving techniques that our users can easily implement in their daily lives. This partnership has enabled us to expand our impact beyond individual habits to community-level water conservation projects.
+                  </p>
+                </div>
+                <div className="md:w-1/2 order-1 md:order-2">
+                  <ImageWithFallback 
+                    src="https://images.unsplash.com/photo-1541956064527-8ec4809a580f" 
+                    alt="EcoWater partnership" 
+                    className="rounded-lg shadow-md w-full h-64 object-cover"
+                  />
                 </div>
               </div>
             </div>
@@ -260,6 +279,21 @@ const Story = () => {
                 <div className="text-muted-foreground">{stat.label}</div>
               </motion.div>
             ))}
+          </div>
+        </motion.div>
+
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.5 }}
+          className="max-w-3xl mx-auto mb-20"
+        >
+          <h2 className="text-2xl font-bold text-center mb-6">
+            <span className="green-gradient-text">Growing Together</span>
+          </h2>
+          <div className="mt-8 mb-12">
+            <GreenGrowthAnimation />
           </div>
         </motion.div>
 

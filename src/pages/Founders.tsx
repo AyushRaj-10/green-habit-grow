@@ -6,6 +6,7 @@ import {
   Mail,
   Twitter
 } from "lucide-react";
+import ImageWithFallback from "@/components/ImageWithFallback";
 
 const foundersData = [
   {
@@ -23,7 +24,7 @@ const foundersData = [
   },
   {
     id: 2,
-    name: "Arpita Pai",
+    name: "Arpita Singh",
     role: "Co-Founder & Head of Product",
     image: "https://images.unsplash.com/photo-1534528741775-53994a69daeb?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=256&q=80",
     bio: "Arpita oversees all product development and operations at GreenRoutine. Her expertise in product management and vision for sustainable technology has been instrumental in creating our intuitive platform that helps users develop eco-friendly habits effectively.",
@@ -91,7 +92,7 @@ const Founders = () => {
                 className="flex flex-col md:flex-row gap-6 items-center md:items-start"
               >
                 <div className="w-64 h-64 md:w-48 md:h-48 rounded-2xl overflow-hidden shadow-lg flex-shrink-0">
-                  <img 
+                  <ImageWithFallback 
                     src={founder.image} 
                     alt={founder.name}
                     className="w-full h-full object-cover"
