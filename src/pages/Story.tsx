@@ -1,69 +1,70 @@
 
 import { motion } from "framer-motion";
+import ImageWithFallback from "@/components/ImageWithFallback";
 
 const timelineEvents = [
   {
-    year: "2023",
-    month: "January",
+    year: "2025",
+    month: "April",
     title: "The Idea is Born",
-    description: "The concept of GreenRoutine emerged during a college hackathon focused on climate solutions. The team recognized that sustainable habits needed better technological support.",
+    description: "The concept of GreenRoutine emerged during a college hackathon focused on climate solutions. Led by Ayush, a full stack developer and Arpita, a product lead, the team recognized that sustainable habits needed better technological support.",
     image: "https://images.unsplash.com/photo-1677442135726-3675b7cce5e9?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=500&q=80"
   },
   {
-    year: "2023",
-    month: "March",
+    year: "2025",
+    month: "May",
     title: "First Prototype",
     description: "After weeks of research and development, the team created the first working prototype of GreenRoutine with basic reminder functionality.",
     image: "https://images.unsplash.com/photo-1575089976121-8ed7b2a54265?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=500&q=80"
   },
   {
-    year: "2023",
-    month: "May",
+    year: "2025",
+    month: "July",
     title: "Beta Launch",
     description: "GreenRoutine launched in beta with 100 early users. The feedback was overwhelmingly positive, with users reporting water and energy savings.",
     image: "https://images.unsplash.com/photo-1577563908411-5077b6dc7624?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=500&q=80"
   },
   {
-    year: "2023",
-    month: "July",
+    year: "2025",
+    month: "August",
     title: "Community Growth",
     description: "The user base grew to 1,000 members. The team added the challenges feature based on user suggestions.",
     image: "https://images.unsplash.com/photo-1531123897727-8f129e1688ce?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=500&q=80"
   },
   {
-    year: "2023",
+    year: "2025",
     month: "September",
     title: "Partnership with EcoWater",
-    description: "GreenRoutine established its first corporate partnership with EcoWater to provide users with discounts on water-saving devices.",
+    description: "GreenRoutine established its first corporate partnership with EcoWater to provide users with discounts on water-saving devices and support the Clean Water Initiative.",
     image: "https://images.unsplash.com/photo-1541956064527-8ec4809a580f?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=500&q=80"
   },
   {
-    year: "2023",
-    month: "November",
+    year: "2025",
+    month: "October",
     title: "5,000 Users Milestone",
     description: "GreenRoutine celebrated reaching 5,000 users and documented a collective saving of over 1 million liters of water.",
     image: "https://images.unsplash.com/photo-1557804506-669a67965ba0?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=500&q=80"
   },
   {
-    year: "2024",
-    month: "January",
+    year: "2025",
+    month: "November",
     title: "New Features Launch",
     description: "The team launched the CO₂ calculator and improved the gamification system with new badges and rewards.",
     image: "https://images.unsplash.com/photo-1566908829550-e6551b00979b?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=500&q=80"
   },
   {
-    year: "2024",
-    month: "March",
+    year: "2025",
+    month: "December",
     title: "School Programs",
     description: "GreenRoutine began partnering with local schools to introduce sustainability habits to children through interactive challenges.",
     image: "https://images.unsplash.com/photo-1503676260728-1c00da094a0b?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=500&q=80"
   },
   {
-    year: "2024",
-    month: "May",
+    year: "2026",
+    month: "January",
     title: "Today and Beyond",
     description: "Now with over 10,000 users worldwide, GreenRoutine continues to grow and evolve, with plans to expand into corporate sustainability programs and community-led initiatives.",
-    image: "https://images.unsplash.com/photo-1626544827763-d516dce335e2?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYW-dlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=500&q=80"
+    image: "https://images.unsplash.com/photo-1626544827763-d516dce335e2?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=500&q=80"
   }
 ];
 
@@ -72,6 +73,13 @@ const impactStats = [
   { value: "50K", label: "kWh of energy conserved" },
   { value: "75K", label: "kg of CO₂ emissions reduced" },
   { value: "12K", label: "Eco-challenges completed" },
+];
+
+const quotes = [
+  { text: "Small changes in daily habits create massive impacts over time. GreenRoutine has helped thousands discover this simple truth.", author: "Ayush Raj, Co-founder & Full Stack Developer" },
+  { text: "The most sustainable action is the one you actually do, day after day. Our goal is to make those actions easy, rewarding, and part of your routine.", author: "Arpita Singh, Co-founder & Head of Product" },
+  { text: "Our partnership with EcoWater has allowed us to directly impact water conservation efforts while providing tangible benefits to our users.", author: "Maya Patel, Partnerships Director" },
+  { text: "When we make sustainability personal and measurable, we create both motivation and accountability. That's the power of GreenRoutine.", author: "Dr. James Chen, Environmental Advisor" }
 ];
 
 const Story = () => {
@@ -106,10 +114,33 @@ const Story = () => {
             <p className="text-lg mb-6">
               We're creating a world where being environmentally conscious is not just something people aspire to, but something they practice every day through simple habits. By gamifying eco-friendly behaviors and building a supportive community, we make the journey toward sustainability engaging and rewarding.
             </p>
-            <blockquote className="border-l-4 border-primary pl-4 py-2 italic text-muted-foreground">
-              "The most sustainable action is the one you actually do, day after day. Our goal is to make those actions easy, rewarding, and part of your routine."
-              <footer className="mt-2 font-semibold">— Ayush Raj, Co-founder</footer>
-            </blockquote>
+            
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-6 my-10">
+              {quotes.map((quote, index) => (
+                <blockquote key={index} className="border-l-4 border-primary pl-4 py-2 italic text-muted-foreground">
+                  "{quote.text}"
+                  <footer className="mt-2 font-semibold">— {quote.author}</footer>
+                </blockquote>
+              ))}
+            </div>
+            
+            <div className="mt-10">
+              <h3 className="text-xl font-semibold mb-4">Clean Water Initiative</h3>
+              <div className="flex flex-col md:flex-row gap-6 items-center">
+                <div className="md:w-1/2">
+                  <ImageWithFallback 
+                    src="https://images.unsplash.com/photo-1506744038136-46273834b3fb" 
+                    alt="Clean water project" 
+                    className="rounded-lg shadow-md w-full h-64 object-cover"
+                  />
+                </div>
+                <div className="md:w-1/2">
+                  <p className="text-lg">
+                    Through our partnership with EcoWater, we've launched the Clean Water Initiative, helping communities gain access to clean water while promoting water conservation habits. For every 1,000 water-saving challenges completed by our users, we fund a water filtration system for communities in need.
+                  </p>
+                </div>
+              </div>
+            </div>
           </div>
         </motion.div>
 
@@ -163,7 +194,7 @@ const Story = () => {
                       
                       {/* Image for even-indexed events */}
                       <div className="w-full md:w-1/2 md:pl-12 mt-4 md:mt-0">
-                        <img 
+                        <ImageWithFallback 
                           src={event.image} 
                           alt={event.title} 
                           className="rounded-lg w-full max-h-64 object-cover shadow-md"
@@ -177,7 +208,7 @@ const Story = () => {
                     <>
                       {/* Image for odd-indexed events */}
                       <div className="w-full md:w-1/2 md:pr-12 md:text-right">
-                        <img 
+                        <ImageWithFallback 
                           src={event.image} 
                           alt={event.title}
                           className="rounded-lg w-full max-h-64 object-cover shadow-md md:ml-auto"

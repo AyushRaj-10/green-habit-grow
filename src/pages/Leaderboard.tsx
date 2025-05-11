@@ -1,3 +1,4 @@
+
 import { useState } from "react";
 import { motion } from "framer-motion";
 import { 
@@ -28,6 +29,7 @@ import {
   SelectValue,
 } from "@/components/ui/select";
 import { Badge } from "@/components/ui/badge";
+import ImageWithFallback from "@/components/ImageWithFallback";
 
 // Custom icon components
 const Droplets = ({ className }: { className?: string }) => (
@@ -270,7 +272,7 @@ const Leaderboard = () => {
                 <div className="flex flex-col items-center">
                   <div className="relative">
                     <div className="w-20 h-20 rounded-full overflow-hidden border-4 border-yellow-200 dark:border-yellow-800">
-                      <img 
+                      <ImageWithFallback 
                         src={users[0]?.avatar} 
                         alt={users[0]?.name} 
                         className="w-full h-full object-cover"
@@ -312,7 +314,7 @@ const Leaderboard = () => {
                 <div className="flex flex-col items-center">
                   <div className="relative">
                     <div className="w-16 h-16 rounded-full overflow-hidden border-4 border-gray-200 dark:border-gray-700">
-                      <img 
+                      <ImageWithFallback 
                         src={users[1]?.avatar} 
                         alt={users[1]?.name} 
                         className="w-full h-full object-cover"
@@ -354,7 +356,7 @@ const Leaderboard = () => {
                 <div className="flex flex-col items-center">
                   <div className="relative">
                     <div className="w-16 h-16 rounded-full overflow-hidden border-4 border-amber-200 dark:border-amber-800">
-                      <img 
+                      <ImageWithFallback 
                         src={users[2]?.avatar} 
                         alt={users[2]?.name} 
                         className="w-full h-full object-cover"
@@ -450,7 +452,7 @@ const Leaderboard = () => {
                         </div>
                         
                         <div className="w-12 h-12 rounded-full overflow-hidden">
-                          <img 
+                          <ImageWithFallback 
                             src={user.avatar} 
                             alt={user.name} 
                             className="w-full h-full object-cover"
