@@ -7,7 +7,6 @@ interface LoadingScreenProps {
 }
 
 const LoadingScreen: React.FC<LoadingScreenProps> = ({ onComplete }) => {
-  const [progress, setProgress] = useState(0);
   const [textVisible, setTextVisible] = useState(false);
   
   useEffect(() => {
@@ -16,22 +15,12 @@ const LoadingScreen: React.FC<LoadingScreenProps> = ({ onComplete }) => {
       setTextVisible(true);
     }, 400);
     
-    // Animate progress
-    let start = 0;
-    const interval = setInterval(() => {
-      start += 1;
-      setProgress(Math.min(start, 100));
-      
-      if (start >= 100) {
-        clearInterval(interval);
-        // Delay complete callback to let animations finish
-        setTimeout(() => {
-          onComplete();
-        }, 500);
-      }
-    }, 20);
+    // Complete after a fixed time without progress bar
+    setTimeout(() => {
+      onComplete();
+    }, 2500);
     
-    return () => clearInterval(interval);
+    return () => {};
   }, [onComplete]);
   
   return (
@@ -55,14 +44,7 @@ const LoadingScreen: React.FC<LoadingScreenProps> = ({ onComplete }) => {
           </h1>
         </div>
         
-        <div className="w-64 h-2 bg-green-200 rounded-full mt-8 overflow-hidden">
-          <div 
-            className="h-full bg-gradient-to-r from-green-700 to-green-500 rounded-full transition-all duration-300 ease-out"
-            style={{ width: `${progress}%` }}
-          ></div>
-        </div>
-        
-        <p className="mt-4 text-green-600 dark:text-green-400 animate-fade-in animate-delay-300">
+        <p className="mt-10 text-green-600 dark:text-green-400 animate-fade-in animate-delay-300">
           Building a greener tomorrow...
         </p>
       </div>

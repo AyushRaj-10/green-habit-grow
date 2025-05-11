@@ -1,4 +1,3 @@
-
 import { useState, useEffect, useRef } from "react";
 import { Link } from "react-router-dom";
 import { motion } from "framer-motion";
@@ -24,22 +23,36 @@ const reviews = [
     id: 1,
     name: "Sarah Johnson",
     avatar: "https://images.unsplash.com/photo-1494790108377-be9c29b29330?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=256&q=80",
-    content: "GreenRoutine has completely transformed how I approach sustainability. The reminders are so helpful!",
+    content: "GreenRoutine has completely transformed how I approach sustainability. The reminders are so helpful and I've cut my water usage by 30%!",
     rating: 5
   },
   {
     id: 2,
     name: "David Chen",
     avatar: "https://images.unsplash.com/photo-1599566150163-29194dcaad36?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=256&q=80",
-    content: "I'm now saving over 1000 liters of water per month thanks to GreenRoutine's suggestions and habit tracking.",
+    content: "I'm now saving over 1000 liters of water per month thanks to GreenRoutine's suggestions and habit tracking. The app makes it so easy to be mindful.",
     rating: 5
   },
   {
     id: 3,
     name: "Emily Patel",
     avatar: "https://images.unsplash.com/photo-1517841905240-472988babdf9?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=256&q=80",
-    content: "The eco-challenges are fun and motivating. I never realized how easy it could be to live more sustainably.",
+    content: "The eco-challenges are fun and motivating. I never realized how easy it could be to live more sustainably. My favorite was the zero-waste week!",
     rating: 4
+  },
+  {
+    id: 4,
+    name: "Michael Torres",
+    avatar: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=256&q=80",
+    content: "As someone who was skeptical about these kinds of apps, I'm impressed. GreenRoutine taught me how small changes can make a big difference for our planet.",
+    rating: 5
+  },
+  {
+    id: 5,
+    name: "Priya Sharma",
+    avatar: "https://images.unsplash.com/photo-1531123897727-8f129e1688ce?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=256&q=80",
+    content: "The impact calculator is eye-opening! Seeing the actual numbers helped my family reduce our carbon footprint by nearly 20% in just two months.",
+    rating: 5
   }
 ];
 
@@ -454,7 +467,7 @@ const Index = () => {
         </div>
       </section>
 
-      {/* User Reviews */}
+      {/* User Reviews - Updated */}
       <section id="reviews" className="section-padding bg-white dark:bg-green-900/10">
         <div className="container mx-auto">
           <motion.div
@@ -492,6 +505,10 @@ const Index = () => {
                         src={review.avatar} 
                         alt={review.name}
                         className="w-20 h-20 rounded-full object-cover border-4 border-white shadow-md"
+                        onError={(e) => {
+                          const target = e.target as HTMLImageElement;
+                          target.src = "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=256&q=80";
+                        }}
                       />
                     </div>
                     <div className="flex-grow">

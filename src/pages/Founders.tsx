@@ -11,9 +11,9 @@ const foundersData = [
   {
     id: 1,
     name: "Ayush Raj",
-    role: "Co-Founder & CEO",
+    role: "Co-Founder & Full Stack Developer",
     image: "/lovable-uploads/47cd217f-ad3c-4d7b-bb27-f6b4055bd7db.png",
-    bio: "Ayush is the visionary behind GreenRoutine's mission to make sustainability a daily habit. With a background in environmental science and software development, he combines his passion for technology with his commitment to creating a greener planet.",
+    bio: "Ayush is an expert in full stack development and the technical visionary behind GreenRoutine. With his deep knowledge of environmental science and cutting-edge software development, he architected the platform that makes sustainability accessible to everyone.",
     social: {
       twitter: "#",
       linkedin: "#",
@@ -24,9 +24,9 @@ const foundersData = [
   {
     id: 2,
     name: "Arpita Pai",
-    role: "Co-Founder & CTO",
+    role: "Co-Founder & Head of Product",
     image: "https://images.unsplash.com/photo-1534528741775-53994a69daeb?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=256&q=80",
-    bio: "Arpita leads the technical development of GreenRoutine. Her expertise in full-stack development and AI has been crucial in creating our personalized recommendation engine that helps users build sustainable habits effectively.",
+    bio: "Arpita oversees all product development and operations at GreenRoutine. Her expertise in product management and vision for sustainable technology has been instrumental in creating our intuitive platform that helps users develop eco-friendly habits effectively.",
     social: {
       twitter: "#",
       linkedin: "#",
@@ -37,9 +37,9 @@ const foundersData = [
   {
     id: 3,
     name: "Astuti Singh",
-    role: "Co-Founder & Head of Product",
+    role: "Co-Founder & UX Designer",
     image: "https://images.unsplash.com/photo-1580489944761-15a19d654956?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=256&q=80",
-    bio: "With a background in UX design and environmental advocacy, Astuti ensures that GreenRoutine is not only effective but also engaging and intuitive to use. She leads our user research and product development initiatives.",
+    bio: "With a background in UX design and environmental advocacy, Astuti ensures that GreenRoutine is not only effective but also engaging and intuitive to use. She leads our user research and experience design initiatives.",
     social: {
       twitter: "#",
       linkedin: "#",
@@ -146,7 +146,7 @@ const Founders = () => {
             <h2 className="text-2xl font-semibold mb-4 text-center">Our Story</h2>
             <div className="space-y-4">
               <p>
-                GreenRoutine began as a college project at Dayananda Sagar College of Engineering in 2023. What started as a simple app to track water usage quickly evolved into a comprehensive platform for sustainable living.
+                GreenRoutine began as an innovative idea in April 2025 at Dayananda Sagar College of Engineering. What started as a simple app to track water usage quickly evolved into a comprehensive platform for sustainable living.
               </p>
               <p>
                 Ayush, Arpita, Astuti, and Arti, all passionate about environmental conservation, realized that while many people wanted to live more sustainably, they often lacked the tools and motivation to make lasting changes. They combined their diverse skills in technology, design, and environmental science to create a solution.
