@@ -1,7 +1,7 @@
 
 import { motion } from "framer-motion";
 import { Badge } from "@/components/ui/badge";
-import { Briefcase, Lightbulb, Users, TrendingUp, Milestone } from "lucide-react";
+import { Briefcase, Lightbulb, Users, TrendingUp, Milestone, School, Building } from "lucide-react";
 
 // Import the custom timeline component
 import { Timeline, TimelineItem } from "@/components/story/Timeline";
@@ -72,6 +72,22 @@ const timelineItems = [
       "Partnered with local water conservation groups to enhance our water-saving recommendations and impact tracking features.",
     icon: <WaterDropIcon className="h-6 w-6" />,
     badge: "Partnership"
+  },
+  {
+    year: "Future: August 2025",
+    title: "Educational Institution Outreach",
+    description: 
+      "Our planned collaboration with schools and colleges will introduce environmental curriculum integration and campus sustainability programs.",
+    icon: <School className="h-6 w-6" />,
+    badge: "Education"
+  },
+  {
+    year: "Future: September 2025",
+    title: "Rural Development Initiative",
+    description:
+      "We aim to extend GreenRoutine to rural communities, providing sustainable farming practices and water conservation techniques tailored to agricultural needs.",
+    icon: <Building className="h-6 w-6" />,
+    badge: "Community"
   },
 ];
 

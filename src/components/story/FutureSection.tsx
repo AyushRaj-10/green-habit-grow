@@ -20,18 +20,25 @@ const FutureSection = () => {
             expanding our impact. Our roadmap includes:
           </p>
           <ul className="list-disc list-inside text-muted-foreground">
-            <li>Developing AI-powered personalized sustainability plans</li>
-            <li>
+            <li className="mb-2">
+              Collaborating with educational institutions to create environmental
+              awareness programs for students of all ages
+            </li>
+            <li className="mb-2">
+              Developing specialized modules for rural communities focusing on
+              sustainable farming practices and water conservation
+            </li>
+            <li className="mb-2">
               Integrating with smart home devices to automate energy and
               water conservation
             </li>
-            <li>
-              Partnering with local communities to support grassroots
-              environmental initiatives
+            <li className="mb-2">
+              Creating community-led environmental initiatives that bring
+              neighbors together for local conservation projects
             </li>
-            <li>
+            <li className="mb-2">
               Expanding our educational resources to promote sustainable
-              living
+              living across different cultural contexts
             </li>
           </ul>
         </div>
