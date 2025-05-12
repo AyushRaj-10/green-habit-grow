@@ -26,50 +26,50 @@ const WaterDropIcon = ({ className }: { className?: string }) => (
 // Timeline items data
 const timelineItems = [
   {
-    year: "2018",
-    title: "Inception of GreenRoutine",
+    year: "April 2025",
+    title: "Initial Concept",
     description:
-      "The idea for GreenRoutine was born out of a university project focused on sustainable living. Our founders envisioned a tool that could make eco-friendly habits accessible to everyone.",
+      "The idea for GreenRoutine emerged during an environmental hackathon. Our team brainstormed ways to help people track their daily environmental impact.",
     icon: <Lightbulb className="h-6 w-6" />,
     badge: "Idea",
   },
   {
-    year: "2019",
-    title: "First Prototype",
+    year: "April 2025",
+    title: "Prototype Development",
     description:
-      "We developed our first prototype, a simple app that sent users daily reminders to conserve water and reduce waste. Initial user feedback was incredibly encouraging.",
+      "We developed our first working prototype with basic features for tracking water usage and waste reduction. Initial testing with our team showed promising results.",
     icon: <Briefcase className="h-6 w-6" />,
     badge: "Development",
   },
   {
-    year: "2020",
-    title: "Beta Launch",
+    year: "May 2025",
+    title: "Alpha Testing",
     description:
-      "GreenRoutine launched its beta program with 100 users. We introduced features like habit tracking and a carbon footprint calculator, gathering valuable data and insights.",
+      "GreenRoutine entered alpha testing with a small group of 25 environmentally-conscious users. We gathered valuable feedback and identified key areas for improvement.",
     icon: <Users className="h-6 w-6" />,
     badge: "Testing",
   },
   {
-    year: "2021",
-    title: "Public Release",
-    description:
-      "GreenRoutine was officially released on iOS and Android. We quickly gained traction, reaching 10,000 users within the first six months.",
-    icon: <TrendingUp className="h-6 w-6" />,
-    badge: "Launch",
-  },
-  {
-    year: "2022",
+    year: "June 2025",
     title: "Feature Expansion",
     description:
-      "We expanded GreenRoutine with new features like eco-challenges, a gamified leaderboard, and personalized sustainability tips. User engagement soared.",
-    icon: <Milestone className="h-6 w-6" />,
+      "Based on user feedback, we added carbon footprint calculation and personalized eco-tips. User engagement metrics showed increased daily app usage.",
+    icon: <TrendingUp className="h-6 w-6" />,
     badge: "Growth",
   },
   {
-    year: "2023",
-    title: "EcoWater Partnership",
+    year: "June 2025",
+    title: "Beta Release",
     description:
-      "Partnered with EcoWater to expand our water conservation initiatives across three continents.",
+      "We launched our beta version to a wider audience of 100 users. New features included weekly eco-challenges and community leaderboards.",
+    icon: <Milestone className="h-6 w-6" />,
+    badge: "Milestone",
+  },
+  {
+    year: "July 2025",
+    title: "Water Conservation Partnership",
+    description:
+      "Partnered with local water conservation groups to enhance our water-saving recommendations and impact tracking features.",
     icon: <WaterDropIcon className="h-6 w-6" />,
     badge: "Partnership"
   },
