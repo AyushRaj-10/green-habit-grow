@@ -24,7 +24,7 @@ const foundersData = [
   },
   {
     id: 2,
-    name: "Arpita Singh",
+    name: "Arpita Pai P V",
     role: "Co-Founder & Head of Product",
     image: "https://images.unsplash.com/photo-1534528741775-53994a69daeb?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=256&q=80",
     bio: "Arpita oversees all product development and operations at GreenRoutine. Her expertise in product management and vision for sustainable technology has been instrumental in creating our intuitive platform that helps users develop eco-friendly habits effectively.",
