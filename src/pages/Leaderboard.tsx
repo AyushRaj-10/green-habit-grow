@@ -119,7 +119,7 @@ const users: User[] = [
   {
     id: "user5",
     name: "Jennifer Lee",
-    avatar: "https://images.unsplash.com/photo-1580489944761-15a19d654956?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=256&q=80",
+    avatar: "https://images.unsplash.com/photo-1580648767791-15a19d654956?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=256&q=80",
     points: 1650,
     badges: ["Zero Waste", "Community Leader"],
     challengesCompleted: 6,
@@ -446,7 +446,7 @@ const Leaderboard = () => {
                       />
                     </div>
                     <div className="flex gap-2">
-                      <Select value={filterBadge || ""} onValueChange={(value) => handleFilterBadge(value || null)}>
+                      <Select value={filterBadge || "all"} onValueChange={(value) => handleFilterBadge(value === "all" ? null : value)}>
                         <SelectTrigger className="w-full md:w-40">
                           <div className="flex items-center gap-2">
                             <Filter className="h-4 w-4" />
@@ -454,7 +454,7 @@ const Leaderboard = () => {
                           </div>
                         </SelectTrigger>
                         <SelectContent>
-                          <SelectItem value="">All Badges</SelectItem>
+                          <SelectItem value="all">All Badges</SelectItem>
                           {badges.map((badge) => (
                             <SelectItem key={badge.name} value={badge.name}>
                               <div className="flex items-center">
