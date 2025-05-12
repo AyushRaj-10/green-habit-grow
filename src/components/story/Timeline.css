@@ -1,0 +1,81 @@
+
+.timeline {
+  position: relative;
+  padding: 1.5rem 0;
+  margin-bottom: 2rem;
+}
+
+.timeline::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 50%;
+  height: 100%;
+  width: 2px;
+  background-color: rgba(107, 114, 128, 0.2);
+  transform: translateX(-50%);
+}
+
+.timeline-item {
+  margin-bottom: 2rem;
+  position: relative;
+  display: flex;
+}
+
+.timeline-badge {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 1rem;
+  background-color: hsl(var(--background));
+  border-radius: 50%;
+  box-shadow: 0 0 0 4px rgba(107, 114, 128, 0.1);
+}
+
+.timeline-panel {
+  flex: 1;
+  padding: 1.5rem;
+  margin-left: 1.5rem;
+  background-color: hsl(var(--card));
+  border: 1px solid hsl(var(--border));
+  border-radius: 0.5rem;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
+}
+
+.timeline-heading {
+  margin-bottom: 0.75rem;
+}
+
+.timeline-title {
+  font-size: 1.25rem;
+  font-weight: 600;
+  margin-bottom: 0.25rem;
+}
+
+.timeline-body p {
+  margin-bottom: 0;
+  color: hsl(var(--muted-foreground));
+}
+
+@media (min-width: 768px) {
+  .timeline-item {
+    justify-content: center;
+  }
+  
+  .timeline-item:nth-child(odd) {
+    flex-direction: row-reverse;
+  }
+  
+  .timeline-item:nth-child(odd) .timeline-panel {
+    margin-left: 0;
+    margin-right: 1.5rem;
+    text-align: right;
+  }
+  
+  .timeline-badge {
+    flex-shrink: 0;
+  }
+}
