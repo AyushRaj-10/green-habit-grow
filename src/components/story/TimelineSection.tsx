@@ -1,10 +1,27 @@
+
 import { motion } from "framer-motion";
 import { Badge } from "@/components/ui/badge";
 import { Briefcase, Lightbulb, Users, TrendingUp, Milestone } from "lucide-react";
 
-// Import the custom timeline component that we'll create
+// Import the custom timeline component
 import { Timeline, TimelineItem } from "@/components/story/Timeline";
 import "./Timeline.css";
+
+// Define the WaterDropIcon component first, before it's used
+const WaterDropIcon = ({ className }: { className?: string }) => (
+  <svg
+    xmlns="http://www.w3.org/2000/svg"
+    viewBox="0 0 24 24"
+    fill="none"
+    stroke="currentColor"
+    strokeWidth="2"
+    strokeLinecap="round"
+    strokeLinejoin="round"
+    className={className}
+  >
+    <path d="M12 2.69l.56 5.59a10 10 0 1 0 10 11.12-4 4 0 0 1-8 0 5 5 0 0 1-10 0 10 10 0 0 0 10-11.12L12 2.69z" />
+  </svg>
+);
 
 // Timeline items data
 const timelineItems = [
@@ -57,22 +74,6 @@ const timelineItems = [
     badge: "Partnership"
   },
 ];
-
-// Custom water drop icon since it's not available in Lucide
-const WaterDropIcon = ({ className }: { className?: string }) => (
-  <svg
-    xmlns="http://www.w3.org/2000/svg"
-    viewBox="0 0 24 24"
-    fill="none"
-    stroke="currentColor"
-    strokeWidth="2"
-    strokeLinecap="round"
-    strokeLinejoin="round"
-    className={className}
-  >
-    <path d="M12 2.69l.56 5.59a10 10 0 1 0 10 11.12-4 4 0 0 1-8 0 5 5 0 0 1-10 0 10 10 0 0 0 10-11.12L12 2.69z" />
-  </svg>
-);
 
 const TimelineSection = () => {
   return (
