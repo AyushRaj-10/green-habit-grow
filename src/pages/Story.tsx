@@ -78,7 +78,7 @@ const impactStats = [
 
 const quotes = [
   { text: "Small changes in daily habits create massive impacts over time. GreenRoutine has helped thousands discover this simple truth.", author: "Ayush Raj, Co-founder & Full Stack Developer" },
-  { text: "The most sustainable action is the one you actually do, day after day. Our goal is to make those actions easy, rewarding, and part of your routine.", author: "Arpita Singh, Co-founder & Head of Product" },
+  { text: "The most sustainable action is the one you actually do, day after day. Our goal is to make those actions easy, rewarding, and part of your routine.", author: "Arpita Pai P V, Co-founder & Head of Product" },
   { text: "We designed GreenRoutine to be intuitive and engaging. When sustainability becomes a delightful experience, it naturally becomes part of your lifestyle.", author: "Astuti Singh, Co-founder & UX Designer" },
   { text: "Our community is the heart of GreenRoutine. Together, we're proving that collective small actions can create significant environmental impacts.", author: "Arti Pikhan, Co-founder & Head of Community" }
 ];
